@@ -100,7 +100,8 @@
 //     await expect(page.locator('//input[@id="yes"]')).toBeChecked()
 // })
 
-import{test,expect} from '@playwright/test'
+//import{test,expect} from '@playwright/test'
+//import { log } from 'node:console'
 // test("radio button",async({page})=>{
 //     await page.goto('https://letcode.in/radio')
 //     const button=page.locator('//input[@id="nobug"]')
@@ -108,30 +109,82 @@ import{test,expect} from '@playwright/test'
 //     await expect(page.locator('//input[@id="two"]')).toBeChecked()
 // })
 
-test.skip("radio button",async({page})=>{
-    await page.goto('https://letcode.in/radio')
-    const nobug=page.locator('//input[@id="nobug"]')
-    const bug=page.locator('//input[@id="bug"]')
+// test("radio button",async({page})=>{
+//     await page.goto('https://letcode.in/radio')
+//     const nobug=page.locator('//input[@id="nobug"]')
+//     const bug=page.locator('//input[@id="bug"]')
 
-    await page.locator('//input[@id="nobug"]').check()
-    await page.locator('//input[@id="bug"]').check()
-    await expect(page.locator(nobug)).toBeChecked()
-    await expect(page.locator('bug')).not.toBeChecked()
-})
+//     await nobug.check()
+//     await bug.check()
+//     await expect(page.locator(nobug)).toBeChecked()
+//     await expect(page.locator('bug')).not.toBeChecked()
+// })
 
-test("radio",async({page})=>{
-    await page.goto('https://letcode.in/dropdowns')
-    //const nobug=page.locator('//select[@id="fruits"]')
-    
-   const single = page.locator('//select[@id="fruits"]');          //single dropDown
-    await single.selectOption("Apple");
-    const double = page.locator('//select[@id="superheros"]')
-    await double.selectOption(["Ant-Man","Aquaman","The Avengers"])
-    // await page.locator('//input[@id="nobug"]').check()
-    // await page.locator('//input[@id="bug"]').check()
-    // await expect(page.locator(nobug)).toBeChecked()
-    // await expect(page.locator('bug')).not.toBeChecked()
-})
+//      test.only("radio button",async({page})=>{
+//      await page.goto('https://letcode.in/radio')
+//      await expect(page.locator('//input[@id="maybe"]')).toBeVisible()
+//      await expect(page.locator('//input[@id="maybe"]')).toBeDisabled()
 
 
+//     import{test,expect} from '@playwright/test'
+//     test.only("radio button",async({page})=>{
+//     await page.goto('https://letcode.in/radio')
+//     const button = page.locator('//label[text()="Find if the checkbox is selected?"]/following-sibling::label/child::input')
+//     await expect(button).toBeEnabled()
+
+//   })
+
+//        import{test,expect} from '@playwright/test'
+//     test.only("radio button",async({page})=>{
+//      await page.goto('https://letcode.in/radio')
+//      const button = page.locator('//label[text()="Accept the T&C"]/following-sibling::label/child::input')
+//      await button.click()
+//    await expect(button).toBeEnabled()
+
+//    await page.pause()
+
+//     })
+   
+// test.only("radio",async({page})=>{
+//     await page.goto('https://letcode.in/dropdowns')   
+//     const single = page.locator('//select[@id="fruits"]')       
+//     await single.selectOption("Apple")
+//     const double = page.locator('//select[@id="superheros"]')
+//     await double.selectOption(["Ant-Man","Aquaman","The Avengers"])
+//     const triple= page.locator('//select[@id="lang"]')
+//     await triple.selectOption("C#")
+//     const lang=page.locator(["JavaScript","Java","Python","Swift","C#"])
+//     console.log("Print all selected value:",lang)
+//     const value= page.locator('//select[@id="country"]')
+//     await value.selectOption("India")
+//     const country=page.locator(["India"])
+//     console.log("selected value:",country)
+// })
+
+// import {test,expect} from '@playwright/test'
+
+// test.only("file upload",async({page})=>{
+// await page.goto('https://demoqa.com/upload-download')
+// await page.locator('//input[@id="uploadFile"]').setInputFiles("C:/Users/ADMIN/Downloads/recent photograph (3) (1).jpg")
+// await page.locator('//input[@id="uploadFile"]').click()
+//  await expect(page.locator('//p[@id="uploadedFilePath"]')).toContainText("recent photograph")
+// await page.pause()
+// })
+
+// import {test,expect} from '@playwright/test'
+
+// test.only("simple alert",async({page})=>{
+//     await page.goto("https://demo.automationtesting.in/Alerts.html")
+
+//     page.on('dialog',async dialog=>{
+//         console.log(dialog.type())
+//         console.log(dialog.message());
+//         expect(dialog.message("I am an alert box!"))
+
+//         await dialog.accept()
+//     })
+
+//     await page.locator('//button[@class="btn btn-danger"]').click()
+//     await page.pause()
+// })
 

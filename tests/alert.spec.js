@@ -60,4 +60,19 @@ test("confirmation",async({page})=>{
     await page.pause()
 })
 
+  test("prompt",async({page})=>{
+    await page.goto("https://testautomationpractice.blogspot.com/")
+
+    page.on('dialog',async prompt=>{
+        console.log(prompt.type())
+        console.log(prompt.message());
+        expect(prompt.message("Press a button!"))
+
+        await prompt.dismiss("Playwright")
+    })
+     await page.locator('//button[@id="promptBtn"]').click()
+    await expect(page.locator('//p[@id="demo"]')).toHaveText("User cancelled the prompt.")
+    await page.pause()
+})
+
 

@@ -60,7 +60,7 @@ test("confirmation",async({page})=>{
     await page.pause()
 })
 
-  test("prompt",async({page})=>{
+  test.only("prompt",async({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/")
 
     page.on('dialog',async prompt=>{
@@ -74,5 +74,6 @@ test("confirmation",async({page})=>{
     await expect(page.locator('//p[@id="demo"]')).toHaveText("User cancelled the prompt.")
     await page.pause()
 })
+
 
 

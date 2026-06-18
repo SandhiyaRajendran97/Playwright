@@ -13,7 +13,7 @@ test("single checkbox",async({page})=>{
     await page.goto('https://testautomationpractice.blogspot.com/')
     await page.locator('//input[@id="sunday"]').check()
     await expect(page.locator('//input[@id="sunday"]')).toBeChecked()
-     await page.locator('//input[@id="sunday"]').uncheck()
+    await page.locator('//input[@id="sunday"]').uncheck()
     await page.pause()
 
 })

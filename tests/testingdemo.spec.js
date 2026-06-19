@@ -40,3 +40,33 @@ await page.pause()
 
 })
 
+test.only("single frame",async({page})=>{
+    await page.goto('https://demo.automationtesting.in/Frames.html')
+    const singleframe=await page.frames()
+    console.log("frame count : ",singleframe.length)
+
+    for(let i of singleframe){
+       console.log("frame url :",i.url())
+
+     }
+
+    const iFrame=await page.frameLocator('//iframe[@name="SingleFrame"]')
+    await iFrame.locator('(//input[@type="text"])[1]').fill("Hi hellow")
+
+    await page.pause()
+})
+
+test("Parent iframe",async({page})=>{
+    await page.goto('https://www.dezlearn.com/nested-iframes-example/')
+    const parentFrame=await page.frames()
+    console.log("frame count : ",parentFrame.length)
+
+    for(let i of parentFrame){
+        console.log("frame.url: ",i.url())
+    }
+    const iframe=await page.frameLocator('//iframe[@name="demo_parent_iframe"]')
+    await iframe.locator('(//button[@onclick="myFunction()"])[1]').click()
+
+    await page.pause()
+
+})

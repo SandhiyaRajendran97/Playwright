@@ -22,17 +22,23 @@ test("handling frames",async({page})=>{
 
 })
 
-test.only("nested frame",async({page})=>{
+test("nested frame",async({page})=>{
     await page.goto("https://demo.automationtesting.in/Frames.html")
-
     await page.click('//a[text()="Iframe with in an Iframe"]')
-
+    //const frame=await page.frame({url:"https://demo.automationtesting.in/MultipleFrames.html"})
     const frame=await page.frameLocator('//div[@id="Multiple"]/child::iframe')
-
+    //const childframe=await frame.childFrames()[0]
     const childframe=await frame.frameLocator('//h5[text()="Nested iFrames"]/following-sibling::iframe')
-
     await childframe.locator('//input[@type="text"]').fill("playwright")
-
     await page.pause()
 
 })
+
+
+
+
+
+
+
+
+

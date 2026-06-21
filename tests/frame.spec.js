@@ -22,7 +22,7 @@ test("handling frames",async({page})=>{
 
 })
 
-test("nested frame",async({page})=>{
+test.only("nested frame",async({page})=>{
     await page.goto("https://demo.automationtesting.in/Frames.html")
     await page.click('//a[text()="Iframe with in an Iframe"]')
     //const frame=await page.frame({url:"https://demo.automationtesting.in/MultipleFrames.html"})

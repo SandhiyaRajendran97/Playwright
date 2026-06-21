@@ -38,7 +38,7 @@ test("multiple tabs",async()=>{
     await page.pause()
 })
 
-test.only("page navigation",async({page})=>{
+test("page navigation",async({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/")
     await page.waitForTimeout(2000)
 
@@ -54,3 +54,6 @@ test.only("page navigation",async({page})=>{
 
 
 })
+
+
+

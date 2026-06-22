@@ -1,6 +1,6 @@
 import {test,expect,chromium} from '@playwright/test'
 
-test("Handling Tabs",async()=>{
+test.only("Handling Tabs",async()=>{
     const browser= await chromium.launch()
     const context=await browser.newContext()
     const page=await context.newPage()

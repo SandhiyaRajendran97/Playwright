@@ -5,7 +5,6 @@ test.only("Handling Tabs",async()=>{
     const context=await browser.newContext()
     const page=await context.newPage()
     const newPage=await context.newPage()
-
     await page.goto("https://testautomationpractice.blogspot.com/")
     console.log(await page.title())
 

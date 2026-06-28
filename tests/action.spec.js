@@ -57,3 +57,9 @@ test("drag and drop",async({page})=>{
     await page.pause()
 
 })
+
+test.only("amazon hover",async({page})=>{
+ await page.goto('https://www.amazon.in/')
+ await page.locator('//span[text()="Prime"]').hover()
+ await page.pause()
+})

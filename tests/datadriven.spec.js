@@ -1,0 +1,17 @@
+import{test,expect} from'@playwright/test'
+import login from './test-data/login.json'
+
+test("Login orangehrm",async({page})=>{
+
+    await page.setViewportSize({ width: 375, height: 667})
+    await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
+    await expect(page.getByAltText('company-branding')).toBeVisible()
+    await page.getByPlaceholder('username').fill(login.username)
+    await page.getByPlaceholder('Password').fill(login.password)
+    await page.getByRole("button",{ name:" Login "}).click()
+
+    await page.pause()
+
+
+})

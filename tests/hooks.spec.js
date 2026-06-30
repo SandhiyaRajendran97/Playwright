@@ -25,6 +25,16 @@ test("login three",async({page})=>{
     await page.locator('//input[@id="password"]').fill("secret_sauce")
     await page.locator('//input[@id="login-button"]').click()
 })
+test("login four",async({page})=>{
+    await page.locator('//input[@id="user-name"]').fill("error_user")
+    await page.locator('//input[@id="password"]').fill("secret_sauce")
+    await page.locator('//input[@id="login-button"]').click()
+})
+test("login five",async({page})=>{``
+    await page.locator('//input[@id="user-name"]').fill("visual_user")
+    await page.locator('//input[@id="password"]').fill("secret_sauce")
+    await page.locator('//input[@id="login-button"]').click()
+})
 
 test.afterEach("logout",async({page})=>{
     await page.locator('//button[@id="react-burger-menu-btn"]').click()

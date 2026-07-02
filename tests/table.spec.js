@@ -13,14 +13,35 @@ test ("web table",async({page})=>{
 //single
 //await page.locator('//table[@id="productTable"]/tbody/tr/td[text()="Tablet "]/following-sibling::td/child::input[@type="checkbox"]')
 
-const locat = await row.filter({
-    has:page.locator("td"),
-    hasText:"Tablet"
-
-
-})
+const locat = row.filter({
+has:page.locator("td"),
+     hasText:"Tablet"
+ })
 
 await locat.locator('//input[@type="checkbox"]').check()
+//
+//await page.pause()
+
+ })
+
+//multiple
+let name=["Laptop","Tablet","Smartwatch"]
+
+for(let i of name){
+//await page.locator(`//table[@id="productTable"]/tbody/tr/td[text()="${i}"]/following-sibling::td/child::input[@type="checkbox"]`).check()
+
+
+const locat = row.filter({
+    has:page.locator("td"),
+    hasText:/Laptop|Tablet|Smartwatch/
+})
+
+const checkLocat=await locat.all()
+
+for(let i of checkLocat){
+    await i.locator('//input[@type="checkbox"]').check()
+}
+
 await page.pause()
 
-})
+}

@@ -10,8 +10,5 @@ test("Login using orangeHrm",async({page})=>{
 
     await page.pause()
 
-
-
-
-
 })
+

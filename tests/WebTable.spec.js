@@ -9,14 +9,19 @@ test("Web Table",async({page})=>{
  console.log("No of Rows :", await row.count()); //7
  console.log("No of columns :", await column.count());// 36
 
-
-
-
-
-
-
-
-
-
 })
+
+test.only('Click all checkboxes', async ({ page }) => {
+
+    await page.goto('https://www.dezlearn.com/webtable-example/');
+
+    const checkboxes = page.locator("//input[@type='checkbox']");
+
+    const count = await checkboxes.count();
+
+    for (let i = 0; i < count; i++) {
+        await checkboxes.nth(i).check();
+    }
+
+});
 

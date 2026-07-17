@@ -60,7 +60,7 @@ test("confirmation",async({page})=>{
     await page.pause()
 })
 
-  test.only("prompt",async({page})=>{
+  test("prompt",async({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/")
 
     page.on('dialog',async prompt=>{
@@ -74,6 +74,24 @@ test("confirmation",async({page})=>{
     await expect(page.locator('//p[@id="demo"]')).toHaveText("User cancelled the prompt.")
     await page.pause()
 })
+
+test('Simple Alert', async ({ page }) => {
+
+  await page.goto('https://the-internet.herokuapp.com/javascript_alerts');
+
+  page.on('dialog', async dialog => {
+    console.log(dialog.message());
+    await dialog.accept();
+  });
+
+  await page.locator("text=Click for JS Alert").click();
+
+  await expect(page.locator("#result"))
+    .toHaveText("You successfully clicked an alert");
+});
+
+
+
 
 
 

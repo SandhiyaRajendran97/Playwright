@@ -10,10 +10,10 @@ test('Date Pickers', async ({ page }) => {
     await page.locator('//input[@id="datepicker"]').fill('2/11/2026')
     await expect(page.locator('//input[@id="txtDate"]')).toHaveValue('2/11/2026')
 
-    await page.pause()
+    //await page.pause()
 })
 
-test.only('Date Picker', async ({ page }) => {
+test('Date Picker', async ({ page }) => {
     //fill method
      await page.goto('https://testautomationpractice.blogspot.com/')
     await page.locator('//input[@id="datepicker"]').click()
@@ -27,5 +27,5 @@ test.only('Date Picker', async ({ page }) => {
     await page.locator('//a[@class="ui-state-default" and text()="10"]').click()
     await expect(page.locator('//input[@id="txtDate"]')).toHaveValue('10/05/2022')
 
-    await page.pause()
+    //await page.pause()
 })

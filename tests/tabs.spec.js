@@ -1,6 +1,6 @@
 import {test,expect,chromium} from '@playwright/test'
 
-test.only("Handling Tabs",async()=>{
+test("Handling Tabs",async()=>{
     const browser= await chromium.launch()
     const context=await browser.newContext()
     const page=await context.newPage()
@@ -34,7 +34,7 @@ test("multiple tabs",async()=>{
     console.log(await newPage.title())
     await newPage.locator('(//a[text()="Pricing"])[1]').click()
 
-    await page.pause()
+    //await page.pause()
 })
 
 test("page navigation",async({page})=>{

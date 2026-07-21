@@ -20,7 +20,7 @@ test ("Login using sausecode",async({page})=>{
    await logoutcode.logouts();
 
 
-    await page.pause()
+    //await page.pause()
 
 
 

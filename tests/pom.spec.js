@@ -8,7 +8,7 @@ test("Login using orangeHrm",async({page})=>{
 
     loginHrm.login("Admin","admin123");
 
-    await page.pause()
+    //await page.pause()
 
 })
 

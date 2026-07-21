@@ -33,5 +33,5 @@ test ("login using built-in-locators", async({page})=>{
 
     await page.getByRole("button",{ name: 'Login' }).click()
     
-    await page.pause()
+   // await page.pause()
 })

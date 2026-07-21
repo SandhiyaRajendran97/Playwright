@@ -17,5 +17,5 @@ test("checkbox",async({page})=>{
         await i.locator('//input[@type="checkbox"]').check()
     }
 
-    await page.pause()
+   // await page.pause()
 })

@@ -20,7 +20,7 @@ test('Enter Name', async ({ page }) => {
 
 });
 
-test.only('Frame Textbox', async ({ page }) => {
+test('Frame Textbox', async ({ page }) => {
 
     await page.goto('https://letcode.in/frame');
 

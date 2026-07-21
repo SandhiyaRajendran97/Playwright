@@ -142,7 +142,7 @@ test("radio buttonn",async({page})=>{
     await button.click()
     await expect(button).toBeEnabled()
 
-   await page.pause()
+  // await page.pause()
 
     })
    
@@ -169,7 +169,7 @@ await page.goto('https://demoqa.com/upload-download')
 await page.locator('//input[@id="uploadFile"]').setInputFiles("C:/Users/ADMIN/Downloads/recent photograph (3) (1).jpg")
 await page.locator('//input[@id="uploadFile"]').click()
  await expect(page.locator('//p[@id="uploadedFilePath"]')).toContainText("recent photograph")
-await page.pause()
+//await page.pause()
 })
 
 
@@ -186,7 +186,7 @@ await page.pause()
     })
 
          await page.locator('//button[@class="btn btn-danger"]').click()
-         await page.pause()
+         //await page.pause()
 })
 
 test("confirmation",async({page})=>{
@@ -204,7 +204,7 @@ test("confirmation",async({page})=>{
     await page.locator('//button[@onclick="confirmbox()"]').click()
     await expect(page.locator('//p[@id="demo"]')).toHaveText("You pressed Ok")
 
-    await page.pause()
+    //await page.pause()
 })
 
 

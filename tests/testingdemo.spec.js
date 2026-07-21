@@ -34,7 +34,7 @@ test ('Register',async({page})=>{
  
 
 
-await page.pause()
+//await page.pause()
 
 
 
@@ -53,7 +53,7 @@ test("single frame",async({page})=>{
     const iFrame=await page.frameLocator('//iframe[@name="SingleFrame"]')
     await iFrame.locator('(//input[@type="text"])[1]').fill("Hi hellow")
 
-    await page.pause()
+   // await page.pause()
 })
 
 test("Parent iframe",async({page})=>{
@@ -67,12 +67,12 @@ test("Parent iframe",async({page})=>{
     const iframe=await page.frameLocator('//iframe[@name="demo_parent_iframe"]')
     await iframe.locator('(//button[@onclick="myFunction()"])[1]').click()
 
-    await page.pause()
+   // await page.pause()
 
 })
 
 
-test.only('Nested frames', async ({ page }) => {
+test('Nested frames', async ({ page }) => {
 
     await page.goto('https://www.dezlearn.com/nested-iframes-example/')
     const frames = page.frames()
@@ -91,5 +91,5 @@ test.only('Nested frames', async ({ page }) => {
             console.log('Clicked Child Frame Button')
         }
     }
-    await page.pause();
+   // await page.pause();
 })

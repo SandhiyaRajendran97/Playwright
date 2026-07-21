@@ -18,7 +18,7 @@ test("assertion",async({page})=>{
     //await expect(page.locator(inputLocator)).toBeEmpty()
 })
 
-test.only('Verify Title', async ({ page }) => {
+test('Verify Title', async ({ page }) => {
     await page.goto('https://playwright.dev/');
     await expect(page).toHaveTitle(/Playwright/);
 });

@@ -42,6 +42,6 @@ for(let i of checkLocat){
     await i.locator('//input[@type="checkbox"]').check()
 }
 
-await page.pause()
+//await page.pause()
 
 }

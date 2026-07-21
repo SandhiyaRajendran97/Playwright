@@ -11,7 +11,7 @@ import {test,expect} from '@playwright/test'
     })
 
     await page.locator('//button[@id="alertBtn"]').click()
-    await page.pause()
+    //await page.pause()
 })
 
 
@@ -27,7 +27,7 @@ test("confirmation",async({page})=>{
     })
 
     await page.locator('//button[@id="confirmBtn"]').click()
-    await page.pause()
+    //await page.pause()
 })
 
     test("confirmation alert",async({page})=>{
@@ -42,7 +42,7 @@ test("confirmation",async({page})=>{
     })
      await page.locator('//button[@id="confirmBtn"]').click()
     await expect(page.locator('//p[@id="demo"]')).toHaveText("You pressed Cancel!")
-    await page.pause()
+   // await page.pause()
 })
  
    test("prompt alert",async({page})=>{
@@ -57,7 +57,7 @@ test("confirmation",async({page})=>{
     })
      await page.locator('//button[@id="promptBtn"]').click()
     await expect(page.locator('//p[@id="demo"]')).toHaveText("Hello Playwright! How are you today?")
-    await page.pause()
+   // await page.pause()
 })
 
   test("prompt",async({page})=>{
@@ -72,7 +72,7 @@ test("confirmation",async({page})=>{
     })
      await page.locator('//button[@id="promptBtn"]').click()
     await expect(page.locator('//p[@id="demo"]')).toHaveText("User cancelled the prompt.")
-    await page.pause()
+   // await page.pause()
 })
 
 test('Simple Alert', async ({ page }) => {

@@ -11,7 +11,7 @@ test("Login orangehrm",async({page})=>{
     await page.getByPlaceholder('Password').fill(login.password)
     await page.getByRole("button",{ name:" Login "}).click()
 
-    await page.pause()
+    //await page.pause()
 
 
 })

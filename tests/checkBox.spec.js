@@ -14,11 +14,11 @@ test("single checkbox",async({page})=>{
     await page.locator('//input[@id="sunday"]').check()
     await expect(page.locator('//input[@id="sunday"]')).toBeChecked()
     await page.locator('//input[@id="sunday"]').uncheck()
-    await page.pause()
+    //await page.pause()
 
 })
 
-test.only("multiple checkbox",async({page})=>{
+test("multiple checkbox",async({page})=>{
    await page.goto('https://testautomationpractice.blogspot.com/')
 
    let checkboxLocat=['//input[@id="sunday"]','//input[@id="tuesday"]','//input[@id="thursday"]']
@@ -26,6 +26,6 @@ test.only("multiple checkbox",async({page})=>{
    for(let locat of checkboxLocat){
         await page.locator(locat).check()
    }
-   await page.pause()
+   //await page.pause()
 })
 

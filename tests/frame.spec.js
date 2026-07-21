@@ -18,11 +18,11 @@ test("handling frames",async({page})=>{
     //const iFrame=await page.frameLocator('//iframe[@id="courses-iframe"]')
     //await iFrame.locator('(//a[text()="Learning paths"])[1]').click()
 
-    await page.pause()
+    //await page.pause()
 
 })
 
-test.only("nested frame",async({page})=>{
+test("nested frame",async({page})=>{
     await page.goto("https://demo.automationtesting.in/Frames.html")
     await page.click('//a[text()="Iframe with in an Iframe"]')
     //const frame=await page.frame({url:"https://demo.automationtesting.in/MultipleFrames.html"})
@@ -30,7 +30,7 @@ test.only("nested frame",async({page})=>{
     //const childframe=await frame.childFrames()[0]
     const childframe=await frame.frameLocator('//h5[text()="Nested iFrames"]/following-sibling::iframe')
     await childframe.locator('//input[@type="text"]').fill("playwright")
-    await page.pause()
+   // await page.pause()
 
 })
 

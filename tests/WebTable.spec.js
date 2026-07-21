@@ -11,7 +11,7 @@ test("Web Table",async({page})=>{
 
 })
 
-test.only('Click all checkboxes', async ({ page }) => {
+test('Click all checkboxes', async ({ page }) => {
 
     await page.goto('https://www.dezlearn.com/webtable-example/');
 

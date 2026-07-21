@@ -17,7 +17,7 @@ import{test,expect, chromium} from '@playwright/test'
 
 })
 
-test.only("page navigation",async({page})=>{
+test("page navigation",async({page})=>{
     await page.goto("https://www.flipkart.com/")
     await page.waitForTimeout(2000)
 

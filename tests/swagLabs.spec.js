@@ -67,5 +67,5 @@ test ("Login into SwagLabs",async({page})=>{
     await page.locator("//a[@id='logout_sidebar_link']").click()
 
 
- await page.pause()
+ //await page.pause()
 })

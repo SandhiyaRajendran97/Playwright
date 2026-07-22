@@ -6,7 +6,7 @@ test("radio button",async({page})=>{
     await page.locator('//input[@id="male"]').check()
     await expect(page.locator('//input[@id="male"]')).toBeChecked()
     await expect(page.locator('//input[@id="female"]')).not.toBeChecked()
-    await page.locator('//input[@id="male"]').uncheck()
+    //await page.locator('//input[@id="male"]').uncheck()
 })
 
 test("single checkbox",async({page})=>{
